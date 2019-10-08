@@ -1,0 +1,46 @@
+package generalQuestions;
+
+
+
+/*Prime Numbers upto N
+Given a number N, the task is to find the Prime Numbers from 1 to N
+*/
+
+import java.util.Scanner;
+
+public class GeneratePrimeNumbers{
+	
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter range of Prime Numbers to be generated 1 to ");
+	
+		int n = scan.nextInt();
+		scan.close();
+		
+		generatePrimeNos(n);
+	}
+	
+	public static void generatePrimeNos(int n){
+	
+		int r = 1;
+		
+		while (r <= n){
+			
+			if(IsPrime(r)==1)
+				System.out.print(r + " ");
+			
+			r++;
+		}
+	}
+	
+	public static int IsPrime(int n){
+	
+		for(int i=2; i<n/2+1; i++){
+			if(n%i == 0)
+				return 0;
+		}
+		return 1;
+	}
+	
+}

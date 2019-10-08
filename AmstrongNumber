@@ -1,0 +1,72 @@
+package generalQuestions;
+
+//import Scanner function to get dynamic user input
+import java.util.Scanner;
+
+public class ArmstrongNumber{
+
+	//Define the main function
+	public static void main(String[] args){
+	
+		System.out.println("Enter the Number - ");
+	
+		//create a scanner object in main function
+		Scanner scan = new Scanner(System.in);
+	
+		//read the user input using scanner object
+		int num = scan.nextInt();
+	
+		scan.close();
+		System.out.println("Entered Number is: " + num);
+	
+		//get the result in form of true/false 0/1 - flag
+		int result = isArmstrong(num);
+	
+		if(result == 0)
+			System.out.println("Amstong Number - Yes");
+		else
+			System.out.println("Armstrong Number - No");
+	}
+	
+	
+	//Define the logic to check if a number is Armstrong number or not
+	public static int isArmstrong(int x){
+	
+		int n = order(x);
+		int temp = x, sum = 0;
+	
+		while(temp != 0){
+			int r = temp%10;
+			sum = sum + power(r,n);
+			temp = temp/10;
+		}
+		if(sum==x)
+		return 0;
+			
+	return 1;
+	}
+	
+	//Define a  order function to calculate the order of given number
+	public static int order(int x){
+	
+		int n = 0;
+		while(x != 0){
+			n++;
+			x=x/10;
+		}
+		return n;
+	}
+	
+	//Defined the power function
+	public static int power(int x, long y){
+	
+	//if order is 0 then x^0 is always 1
+	if(y == 0)
+		return 1;
+	//if order is odd then multiple the result with extra x
+	if(y % 2 == 0)
+		//if we use power(x,y) instead of power(x,y/2) * power(x, y/2), then we get an Stackoverflow issue
+		return power(x,y/2) * power(x,y/2);
+	return x * power(x,y/2) * power(x,y/2);
+	}
+}

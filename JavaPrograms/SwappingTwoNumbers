@@ -1,0 +1,43 @@
+package generalQuestions;
+
+
+/* Given two numbers, the task is to swap the two numbers use Scanner Function
+*/
+
+import java.util.Scanner;
+
+public class SwappingTwoNumbers{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter the 1st Number: ");
+		int x = scan.nextInt();
+		
+		System.out.println("Enter the 2nd Number: ");
+		int y = scan.nextInt();
+		
+		scan.close();
+		
+		System.out.println("Before Swapping: (1st Number = "+x+", 2nd Number = "+y+")");
+		
+		swapping(x,y);
+	}
+	
+	public static void swapping(int x, int y){
+	
+		//Logic 1: using addition and substraction 
+		x = x+y;
+		y = x-y;
+		x = x-y;
+		
+		/*Logic 2: using temp variable 
+		int temp = 0;
+		temp = x;
+		x=y;
+		y=temp;*/
+	
+		System.out.println("After Swapping: (1st Number = "+x+", 2nd Number = "+y+")");
+	}
+}

@@ -1,0 +1,43 @@
+package generalQuestions;
+
+/*Given a number, the task is to find the Factorial of this number using scanner function. 
+Factorial of a non-negative integer is the multiplication of all integers smaller than or equal to n.
+
+Examples:
+
+Input: 3
+Output: 6
+1 * 2 * 3 = 6
+
+Input: 6
+Output: 720
+1 * 2 * 3 * 4 * 5 * 6 = 720
+*/
+
+import java.util.Scanner;
+
+public class Factorial{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the Number whose Factorial to be calculated - ");
+		int f = scan.nextInt();
+		scan.close();
+		int result = calcFactorial(f);
+		
+		System.out.println("The Factoial of "+f+" is: "+result);
+	}
+	
+	public static int calcFactorial(int n){
+	
+	int r=1;
+	
+	while (n>0){
+	r = r * n;
+	n--;
+	}
+	return r;
+	}
+	
+}

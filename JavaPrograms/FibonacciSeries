@@ -1,0 +1,42 @@
+package generalQuestions;
+
+/*Given a number ‘n’, the task is to print the Fibonacci series using Scanner Function. 
+The Fibonacci numbers are the numbers in the following integer sequence.
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
+
+In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation 
+    Fn = Fn-1 + Fn-2
+	with seed values
+   F0 = 0 and F1 = 1. 
+*/
+
+import java.util.Scanner;
+
+public class FibonacciSeriesClass{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+	
+		System.out.println("Enter the range of fibonacci number to be generated");
+		int n = scan.nextInt();
+		scan.close();
+		System.out.println("The Fibonacci number as as follows: ");
+		fibonacci(n);
+	}
+	
+	public static void fibonacci(int n){
+	
+		int a=0, b =1, c;
+		System.out.print(a + " " + b);
+		for(int i = 3; i<=n;i++){
+			c = 0;
+			c= a+b;
+			a=b;
+			b=c;
+			System.out.print(" " + c);
+		}
+	}
+	
+}

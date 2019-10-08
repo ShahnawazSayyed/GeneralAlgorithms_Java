@@ -1,0 +1,33 @@
+package generalQuestions;
+
+
+
+/* Given three numbers, the task is to find the greatest of three numbers */
+
+import java.util.Scanner;
+
+public class GreatestOfThreeNumbers{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter 1st Number: ");
+		int x = scan.nextInt();
+		System.out.println("Enter 2nd Number: ");
+		int y = scan.nextInt();
+		System.out.println("Enter 3rd Number: ");
+		int z = scan.nextInt();
+		scan.close();
+		greatestOfThree(x,y,z);
+	}
+	
+	public static void greatestOfThree(int x,int y,int z){
+	
+	if(x>y && x>z)
+		System.out.println("Greatest Number is 1st Number: "+ x);
+	else if(y>x && y>z)
+		System.out.println("Greatest Number is 2nd Number: "+ y);
+	else
+		System.out.println("Greatest Number is 3rd Number: "+ z);
+	}
+}

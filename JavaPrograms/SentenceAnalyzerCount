@@ -1,0 +1,76 @@
+/* Analyze the Given String
+Create functions
+
+1. To count the number of words in the String
+2. To count the number of vowels in the String
+3. To count the number of white spaces in the string
+4. To count the special characters (, ' " _ $ # . ? )
+*/
+
+import java.util.Scanner;
+
+public class SentenceAnalyzerCount{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter the String to be analyzed: ");
+		String sen = scan.nextLine();
+		//#This is, (my) "First $_Sentence" analyzer' test trial.?
+		scan.close();
+		System.out.println(sen);
+		
+		int cWSs = countWhiteSpaces(sen);
+		int cVWs = countVowels(sen);
+		int cWDs = countWords(sen);
+		int cSCs = countSpecialChars(sen);
+		System.out.println("Count of Blank Spaces: " + cWSs 
+				+ "\nCount of Vowels: " + cVWs
+				+ "\nCount of Words: " + cWDs
+				+ "\nCount of Special Characters: " + cSCs);	
+	}
+	
+	public static int countSpecialChars(String sen){
+		
+		int c=0;
+		for(int i = 0; i<sen.length();i++){
+			switch(sen.charAt(i)){
+			case '!' : case '@' : case '#' : case '$' : case '%' : case '^' : case '&' : case '*' : case '(' : case ')' 
+			: case '"' : case '\'': case '_': case '.': case '?': case ',':
+					c++;
+			}
+		}
+		return c;
+	}
+	
+	public static int countWords(String sen){
+		
+		String[] senA = sen.split(" ");
+	
+		return senA.length;
+	}
+	
+	public static int countWhiteSpaces(String sen){
+		
+		int c=0;
+		for(int i = 0; i<sen.length();i++){
+			if(sen.charAt(i) == ' ')
+				c++;
+		}
+		return c;	
+	}
+	
+	public static int countVowels(String sen){
+	
+		int c = 0;
+		String senL = sen.toLowerCase();
+		for(int i=0; i<sen.length();i++){
+			switch(senL.charAt(i)){
+				case 'a': case 'e': case 'i': case 'o': case 'u':
+					c++;
+			}
+		}
+		return c;
+	}
+}

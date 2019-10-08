@@ -1,0 +1,36 @@
+package generalQuestions;
+
+
+/* Given two numbers, the task is to find the average of two numbers using scanner function.
+
+Examples:
+
+Input: n1 = 10, n2 = 20
+Output: 15
+
+Input: n1 = 100, n2 = 200
+Output: 150
+*/
+
+import java.util.Scanner;
+
+public class CalculateAverage{
+
+	public static void main(String[] args){
+	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the 1st Number: ");
+		float x = scan.nextInt();
+		System.out.println("Enter the 2nd Number: ");		
+		float y = scan.nextInt();		
+		scan.close();
+		
+		float z = calcAverage(x,y);
+		System.out.println("The Agerage is: " + z);
+	}
+	
+	public static float calcAverage(float x, float y){
+		
+		return (x+y)/2;
+	}
+}
